@@ -28,12 +28,20 @@ class Car {
     this.speed = 0
   }
 
-  accelerate(accelerateValue) {
-    this.speed + accelerateValue <= this.maxSpeed ? (this.speed = this.speed + accelerateValue) : false
+  accelerate(value) {
+    if (this.speed + value <= this.maxSpeed) {
+      this.speed += value;
+    } else {
+      this.speed = this.maxSpeed;
+    }
   }
 
-  decelerate(decelerateValue) {
-    this.speed - decelerateValue >= 0 ? (this.speed = this.speed - decelerateValue) : false
+  decelerate(value) {
+    if (this.speed - value >= 0) {
+      this.speed -= value;
+    } else {
+      this.speed = 0;
+    }
   }
 
   drive(hours) {
